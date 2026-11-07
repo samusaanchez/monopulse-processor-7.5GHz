@@ -57,8 +57,6 @@ Every passive circuit was designed first with ideal transmission lines (TLIN) an
 
 ### Wilkinson divider
 
-<p align="center"><img src="layouts/Wilkinson_Real.png" alt="Wilkinson divider layout" width="360"></p>
-
 | | Ideal | Real |
 |---|---|---|
 | \|S21\| = \|S31\| at 7.5 GHz | −3.01 dB | −3.11 dB |
@@ -68,15 +66,12 @@ Every passive circuit was designed first with ideal transmission lines (TLIN) an
 
 Both outputs stay in phase. The real divider is slightly shifted down in frequency (isolation minimum at 7.36 GHz), so it loses bandwidth on the upper side.
 
-| Ideal | Real | Phase |
-|---|---|---|
-| ![Ideal Wilkinson](figures/1a_Wilkinson_Ideal_S.png) | ![Real Wilkinson](figures/1b_Wilkinson_Real_S.png) | ![Wilkinson phase](figures/1c_Wilkinson_Phase.png) |
+<table>
+<tr><td align="center"><img src="layouts/Wilkinson_Real.png" alt="Wilkinson layout" width="420"><br><sub>Layout</sub></td><td align="center"><img src="figures/1a_Wilkinson_Ideal_S.png" alt="Ideal Wilkinson" width="420"><br><sub>Ideal: |S| (dB)</sub></td></tr>
+<tr><td align="center"><img src="figures/1b_Wilkinson_Real_S.png" alt="Real Wilkinson" width="420"><br><sub>Real: |S| (dB)</sub></td><td align="center"><img src="figures/1c_Wilkinson_Phase.png" alt="Wilkinson phase" width="420"><br><sub>Phase of S21 and S31</sub></td></tr>
+</table>
 
 ### Rat-race hybrid
-
-<p align="center"><img src="layouts/RatRace_Real.png" alt="Rat-race layout" width="360"></p>
-
-The 3λg/4 arm is folded.
 
 | | Ideal | Real |
 |---|---|---|
@@ -87,12 +82,16 @@ The 3λg/4 arm is folded.
 | Phase imbalance at the band edges | ±3.2° | +3.3° / −3.0° |
 | Bandwidth with S11, S14, S23 ≤ −20 dB | 6.46–8.54 GHz (28 %) | ≈ 6.5–8.7 GHz (≈ 29 %) |
 
-The phase balance limits the processor: the ideal hybrid stays within ±5° from 6.90 to 8.10 GHz (16 %), still wider than the 10 % required.
+The 3λg/4 arm is folded. The phase balance limits the processor: the ideal hybrid stays within ±5° from 6.90 to 8.10 GHz (16 %), still wider than the 10 % required.
 
-| Ideal | Real |
-|---|---|
-| ![Ideal rat-race](figures/2a_RatRace_Ideal_S.png) | ![Real rat-race](figures/2b_RatRace_Real_S.png) |
-| ![Rat-race Σ phase](figures/2c_RatRace_Phase.png) | ![Rat-race Δ phase](figures/2d_RatRace_Phase_Delta.png) |
+<table>
+<tr><td align="center" rowspan="2"><img src="layouts/RatRace_Real.png" alt="Rat-race layout" width="320"><br><sub>Layout</sub></td><td align="center"><img src="figures/2a_RatRace_Ideal_S.png" alt="Ideal rat-race" width="520"><br><sub>Ideal: |S| (dB)</sub></td></tr>
+<tr><td align="center"><img src="figures/2b_RatRace_Real_S.png" alt="Real rat-race" width="520"><br><sub>Real: |S| (dB)</sub></td></tr>
+</table>
+
+<table>
+<tr><td align="center"><img src="figures/2c_RatRace_Phase.png" alt="Rat-race Σ phase" width="420"><br><sub>Phase at the Σ port (S12, S13)</sub></td><td align="center"><img src="figures/2d_RatRace_Phase_Delta.png" alt="Rat-race Δ phase" width="420"><br><sub>Phase at the Δ port (S42, S43)</sub></td></tr>
+</table>
 
 ### Phase-shifting line
 
@@ -108,10 +107,6 @@ The ideal TLIN of 86.19° at 7.5 GHz becomes a 50-Ω microstrip line of 4.59 mm:
 - **Gate bias:** line TL7, λ/4 open stub TL13 and R1 = 50 Ω to −1.225 V.
 - **Drain bias:** line TL11, C2 = 10 pF to ground and R2 = 50 Ω to 2 V.
 - **Transistor pads:** 70-Ω lines of 0.5 mm (TL14, TL15). The ATF-36163 is a two-port S-parameter block with its sources grounded.
-
-<p align="center"><img src="layouts/LNA_Core.png" alt="LNA layout" width="260"></p>
-
-In the layout, R1, R2 and C2 are 0402 parts (green).
 
 **Design decisions**
 
@@ -129,7 +124,9 @@ In the layout, R1, R2 and C2 are 0402 parts (green).
 | S22 | −11.09 | −10.18 | −9.32 |
 | NF | 0.944 | 0.903 | 0.901 |
 
-![LNA in band](figures/4a_LNA_InBand.png)
+<table>
+<tr><td align="center"><img src="layouts/LNA_Core.png" alt="LNA layout" width="260"><br><sub>Layout: R1, R2 and C2 are 0402 parts (green)</sub></td><td align="center"><img src="figures/4a_LNA_InBand.png" alt="LNA in band" width="580"><br><sub>S11, S21, S22 and NF in band</sub></td></tr>
+</table>
 
 **Stability.** With a bypass capacitor at the gate, |S11| exceeded 0 dB out of band (negative input resistance). Replacing it with a λ/4 open stub keeps the RF short only around 7.5 GHz, so out of band the 50-Ω bias resistor loads the gate. Result: μ ≥ 1 outside 4.8–9.2 GHz, and |S11|, |S22| < 0 dB from 0.5 to 18 GHz. Inside the band the device remains conditionally stable, but in the processor each LNA always sees the matched ports of the hybrids.
 
@@ -143,9 +140,7 @@ In the layout, R1, R2 and C2 are 0402 parts (green).
 
 ## Processor
 
-<p align="center"><img src="layouts/Monopulse_Processor.png" alt="Monopulse processor layout" width="420"></p>
-
-The Wilkinson divider sits at the bottom, one LNA on each side and the rat-race at the top. The extra 4.59 mm of the phase line is in branch B. The segment lengths are written as functions of that length, so the loop closes for any phase shift. The dashed boxes are the subcircuit boundaries.
+In the layout, the Wilkinson divider sits at the bottom, one LNA on each side and the rat-race at the top. The extra 4.59 mm of the phase line is in branch B. The segment lengths are written as functions of that length, so the loop closes for any phase shift. The dashed boxes are the subcircuit boundaries.
 
 ### Phase shift φ = 86°
 
@@ -162,9 +157,10 @@ The Wilkinson divider sits at the bottom, one LNA on each side and the rat-race 
 - The input match is far better than that of a single LNA: the 86° line returns the two LNA reflections almost in antiphase, so they cancel at the Wilkinson input.
 - NF of each port ≈ NF of the LNA + (G of the LNA − G of the port): the noise of both LNAs splits evenly between Σ and Δ, the signal does not.
 
-| Magnitudes | Phase |
-|---|---|
-| ![Processor at 86°](figures/5a_Processor_Real_phi86.png) | ![Processor phase at 86°](figures/5b_Processor_Real_phi86_Phase.png) |
+<table>
+<tr><td align="center" rowspan="2"><img src="layouts/Monopulse_Processor.png" alt="Monopulse processor layout" width="320"><br><sub>Layout</sub></td><td align="center"><img src="figures/5a_Processor_Real_phi86.png" alt="Processor at 86°" width="520"><br><sub>Σ, Δ, NF and matching</sub></td></tr>
+<tr><td align="center"><img src="figures/5b_Processor_Real_phi86_Phase.png" alt="Processor phase at 86°" width="520"><br><sub>Phase of Σ and Δ</sub></td></tr>
+</table>
 
 ### Phase shift φ = 0
 
