@@ -96,6 +96,13 @@ The ideal TLIN of 86.19° at 7.5 GHz becomes a 50-Ω microstrip line of 4.59 mm:
 
 ## Low-noise amplifier
 
+![LNA schematic](schematics/LNA_Core.png)
+
+- **Matching:** open stub TL1 and line TL2 at the input; line TL4 and open stub TL3 at the output.
+- **Gate bias:** line TL7, λ/4 open stub TL13 and R1 = 50 Ω to −1.225 V.
+- **Drain bias:** line TL11, C2 = 10 pF to ground and R2 = 50 Ω to 2 V.
+- **Transistor pads:** 70-Ω lines of 0.5 mm (TL14, TL15). The ATF-36163 is a two-port S-parameter block with its sources grounded.
+
 **Design decisions**
 
 - **Minimum noise:** the LNA is the first active stage of the receiver, so it sets the system noise figure (Friis). The source is matched to Γopt = 0.43∠112° (Fmin = 0.74 dB at 7.5 GHz).
@@ -184,6 +191,7 @@ In the complete processor, the Wilkinson divider sits at the bottom, one LNA on 
 awr/Monopulse_Processor.emp   AWR Design Environment project: schematics, layouts, graphs and optimizer goals
 figures/                      Graphs exported from the project
 layouts/                      Layout views exported from the project
+schematics/                   Schematic view of the LNA core
 ```
 
 Open the project in AWR Design Environment (Microwave Office) with File → Open Project. The ATF-36163 S-parameter data used by the amplifier is embedded in the project.
