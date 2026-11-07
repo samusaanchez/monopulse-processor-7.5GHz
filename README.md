@@ -179,7 +179,7 @@ Open the project in AWR Design Environment (Microwave Office) with File → Open
 
 - Circuit-level (linear) simulation with microstrip models; no electromagnetic simulation.
 - The circuits were not fabricated or measured.
-- The transistor source pads are drawn as ground; a fabricated board would need vias (MVIA) to the ground plane.
+- The transistor source pads are left unconnected in the layout; a fabricated board would need a via (MVIA) to the ground plane at each one.
 - The processor layout keeps a sub-micron closure residual in the loop between the two branches, far below the 0.15-mm fabrication resolution.
 
 ## Tools
