@@ -166,11 +166,24 @@ All the power goes to Σ (LNA gain minus about 0.3 dB of hybrid losses) and Δ b
 
 At 7.5 GHz the ideal version gives Σ = 9.08 dB and Δ = 8.50 dB at φ = 86°, so the microstrip hybrids cost about 0.2–0.4 dB.
 
+## Layouts
+
+All layouts follow the 0.15-mm fabrication rule. The 0402 resistors and capacitors are shown in green.
+
+| Wilkinson divider | Rat-race hybrid (folded 3λg/4 arm) | LNA |
+|---|---|---|
+| ![Wilkinson layout](layouts/Wilkinson_Real.png) | ![Rat-race layout](layouts/RatRace_Real.png) | ![LNA layout](layouts/LNA_Core.png) |
+
+In the complete processor, the Wilkinson divider sits at the bottom, one LNA on each side and the rat-race at the top. The extra 4.59 mm of the phase line is in branch B. The segment lengths are written as functions of that length, so the loop closes for any phase shift. The dashed boxes are the subcircuit boundaries.
+
+<p align="center"><img src="layouts/Monopulse_Processor.png" alt="Monopulse processor layout" width="480"></p>
+
 ## Repository contents
 
 ```
 awr/Monopulse_Processor.emp   AWR Design Environment project: schematics, layouts, graphs and optimizer goals
 figures/                      Graphs exported from the project
+layouts/                      Layout views exported from the project
 ```
 
 Open the project in AWR Design Environment (Microwave Office) with File → Open Project. The ATF-36163 S-parameter data used by the amplifier is embedded in the project.
