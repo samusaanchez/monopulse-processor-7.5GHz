@@ -2,7 +2,8 @@
 
 A microstrip monopulse processor simulator designed and simulated in **AWR Design Environment (Microwave Office)**. A Wilkinson divider feeds two identical low-noise amplifiers, one of them through a phase-shifting line that emulates the path difference between two antennas, and a rat-race hybrid combines both branches into the **sum (Σ)** and **difference (Δ)** outputs.
 
-Lab project for the course *Radio Frequency and Antenna Subsystems*, MSc in Telecommunication Engineering, Universidad Carlos III de Madrid (2026).
+Lab project for the course *Radio Frequency and Antenna Subsystems*
+MSc in Telecommunication Engineering, Universidad Carlos III de Madrid (2026).
 
 ## Highlights
 
