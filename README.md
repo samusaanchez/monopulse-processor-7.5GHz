@@ -53,9 +53,11 @@ With identical amplifiers of gain G and a phase difference φ between branches:
 
 ## Passive circuits
 
-Every passive circuit was designed first with ideal transmission lines (TLIN) and then in microstrip (MLIN, MTEE, MCURVE).
+Every passive circuit was designed first with ideal transmission lines (TLIN) and then in microstrip (MLIN, MTEE, MCURVE). All layouts follow the 0.15-mm fabrication rule.
 
 ### Wilkinson divider
+
+<p align="center"><img src="layouts/Wilkinson_Real.png" alt="Wilkinson divider layout" width="360"></p>
 
 | | Ideal | Real |
 |---|---|---|
@@ -71,6 +73,10 @@ Both outputs stay in phase. The real divider is slightly shifted down in frequen
 | ![Ideal Wilkinson](figures/1a_Wilkinson_Ideal_S.png) | ![Real Wilkinson](figures/1b_Wilkinson_Real_S.png) | ![Wilkinson phase](figures/1c_Wilkinson_Phase.png) |
 
 ### Rat-race hybrid
+
+<p align="center"><img src="layouts/RatRace_Real.png" alt="Rat-race layout" width="360"></p>
+
+The 3λg/4 arm is folded.
 
 | | Ideal | Real |
 |---|---|---|
@@ -103,6 +109,10 @@ The ideal TLIN of 86.19° at 7.5 GHz becomes a 50-Ω microstrip line of 4.59 mm:
 - **Drain bias:** line TL11, C2 = 10 pF to ground and R2 = 50 Ω to 2 V.
 - **Transistor pads:** 70-Ω lines of 0.5 mm (TL14, TL15). The ATF-36163 is a two-port S-parameter block with its sources grounded.
 
+<p align="center"><img src="layouts/LNA_Core.png" alt="LNA layout" width="260"></p>
+
+In the layout, R1, R2 and C2 are 0402 parts (green).
+
 **Design decisions**
 
 - **Minimum noise:** the LNA is the first active stage of the receiver, so it sets the system noise figure (Friis). The source is matched to Γopt = 0.43∠112° (Fmin = 0.74 dB at 7.5 GHz).
@@ -132,6 +142,10 @@ The ideal TLIN of 86.19° at 7.5 GHz becomes a 50-Ω microstrip line of 4.59 mm:
 ![Bias network effect](figures/4d_LNA_Bias_Effect.png)
 
 ## Processor
+
+<p align="center"><img src="layouts/Monopulse_Processor.png" alt="Monopulse processor layout" width="420"></p>
+
+The Wilkinson divider sits at the bottom, one LNA on each side and the rat-race at the top. The extra 4.59 mm of the phase line is in branch B. The segment lengths are written as functions of that length, so the loop closes for any phase shift. The dashed boxes are the subcircuit boundaries.
 
 ### Phase shift φ = 86°
 
@@ -172,18 +186,6 @@ All the power goes to Σ (LNA gain minus about 0.3 dB of hybrid losses) and Δ b
 | ![Ideal processor at 86°](figures/6a_Processor_Ideal_phi86.png) | ![Ideal processor phase](figures/6b_Processor_Ideal_phi86_Phase.png) | ![Ideal processor at 0°](figures/6c_Processor_Ideal_phi0.png) |
 
 At 7.5 GHz the ideal version gives Σ = 9.08 dB and Δ = 8.50 dB at φ = 86°, so the microstrip hybrids cost about 0.2–0.4 dB.
-
-## Layouts
-
-All layouts follow the 0.15-mm fabrication rule. The 0402 resistors and capacitors are shown in green.
-
-| Wilkinson divider | Rat-race hybrid (folded 3λg/4 arm) | LNA |
-|---|---|---|
-| ![Wilkinson layout](layouts/Wilkinson_Real.png) | ![Rat-race layout](layouts/RatRace_Real.png) | ![LNA layout](layouts/LNA_Core.png) |
-
-In the complete processor, the Wilkinson divider sits at the bottom, one LNA on each side and the rat-race at the top. The extra 4.59 mm of the phase line is in branch B. The segment lengths are written as functions of that length, so the loop closes for any phase shift. The dashed boxes are the subcircuit boundaries.
-
-<p align="center"><img src="layouts/Monopulse_Processor.png" alt="Monopulse processor layout" width="480"></p>
 
 ## Repository contents
 
