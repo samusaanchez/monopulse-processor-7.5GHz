@@ -1,0 +1,4 @@
+*.lock
+*.aedtresults/
+*.semaphore
+*.asol_priv
