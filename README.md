@@ -7,6 +7,13 @@ MSc in Telecommunication Engineering, Universidad Carlos III de Madrid (2026).
 
 The slides presented in class are in [`presentation/Monopulse_Processor_Presentation.pdf`](presentation/Monopulse_Processor_Presentation.pdf).
 
+The repository holds the two lab projects of the course, both for the same 7.125–7.875 GHz band:
+
+| Project | Tool | Where |
+|---|---|---|
+| Monopulse processor simulator | AWR Design Environment (Microwave Office) | This page |
+| Half-wave dipole antenna | Ansys HFSS | [`dipole-antenna-hfss/`](dipole-antenna-hfss/) |
+
 ## Highlights
 
 - **LNA:** noise figure 0.90–0.94 dB and gain 11.3–12.4 dB over the whole 7.125–7.875 GHz band.
@@ -185,11 +192,23 @@ All the power goes to Σ (LNA gain minus about 0.3 dB of hybrid losses) and Δ b
 
 At 7.5 GHz the ideal version gives Σ = 9.08 dB and Δ = 8.50 dB at φ = 86°, so the microstrip hybrids cost about 0.2–0.4 dB.
 
+## Dipole antenna (Ansys HFSS)
+
+The second project is a half-wave dipole for the same band. Two such dipoles spaced 0.7λ would be the real antennas that the 86° line of the processor emulates.
+
+- **Resonance at 7.50 GHz** (S11 = −17.2 dB), with a −10 dB bandwidth of 7.08–7.99 GHz (12.1 %).
+- **Peak realized gain 2.40 dBi**; directivity 2.38 dBi at 7.5 GHz.
+- **Half-power beamwidth** of 86.6°, 77.4° and 45.0° for λ/4, ≈λ/2 and λ.
+- **Surface current** with the maxima and minima that thin-wire theory predicts.
+
+Project, report, slides and figures are in [`dipole-antenna-hfss/`](dipole-antenna-hfss/README.md).
+
 ## Repository contents
 
 ```
 awr/Monopulse_Processor.emp   AWR Design Environment project: schematics, layouts, graphs and optimizer goals
 presentation/                 Slides presented in class (PDF)
+dipole-antenna-hfss/          Dipole antenna project (Ansys HFSS), with its own README, report and slides
 figures/                      Graphs exported from the project
 layouts/                      Layout views exported from the project
 schematics/                   Schematic view of the LNA core
@@ -206,4 +225,4 @@ Open the project in AWR Design Environment (Microwave Office) with File → Open
 
 ## Tools
 
-AWR Design Environment (Microwave Office) and TXLINE.
+AWR Design Environment (Microwave Office) and TXLINE for the processor; Ansys HFSS (Electronics Desktop 2025 R1) for the dipole.

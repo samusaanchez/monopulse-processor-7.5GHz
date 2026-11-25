@@ -4,6 +4,8 @@ Design and full-wave simulation of a half-wavelength dipole antenna in **Ansys H
 
 Lab project for the course *Radio Frequency and Antenna Subsystems*, MSc in Telecommunication Engineering, Universidad Carlos III de Madrid (2026).
 
+This is the second project of the repository; the first one, a monopulse processor simulator for the same band designed in AWR, is described in the [main README](../README.md).
+
 ## Highlights
 
 - **Resonance at 7.50 GHz** (S11 = −17.2 dB), with a −10 dB impedance bandwidth of 7.08–7.99 GHz (12.1 %).
@@ -78,7 +80,7 @@ presentation/                  Slides presented in class (PDF)
 figures/                       Figures used in this README and in the report
 ```
 
-The solved results (`Dipole_7G5.aedtresults`, about 250 MB) are too large for the repository. They are attached to the [latest release](../../releases/latest) as `Dipole_7G5_aedtresults.zip`. To open the project with every solution already computed, unzip that file into `hfss/`, next to `Dipole_7G5.aedt`, and open the project in Ansys Electronics Desktop 2025 R1 or later. Without it, run **Analyze All** to regenerate the solutions; all reports update automatically.
+Open `hfss/Dipole_7G5.aedt` in Ansys Electronics Desktop 2025 R1 or later and run **Analyze All** to regenerate the solutions; all reports update automatically. The solved results (`Dipole_7G5.aedtresults`, about 250 MB) are not stored in the repository because of their size.
 
 ## Scope and limitations
 
