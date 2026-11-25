@@ -11,7 +11,7 @@ Lab project for the course *Radio Frequency and Antenna Subsystems*, MSc in Tele
 - **Half-power beamwidth** of 86.6°, 77.4° and 45.0° for λ/4, ≈λ/2 and λ, within 0.4–3° of thin-wire theory.
 - **Surface current** with one maximum at the feed (λ/4, λ/2) and two maxima at mid-arm with a minimum at the feed (λ), as theory predicts.
 
-The full write-up, with every figure and its discussion, is in [`report/Dipole_HFSS_Report.pdf`](report/Dipole_HFSS_Report.pdf).
+The full write-up, with every figure and its discussion, is in [`report/Dipole_HFSS_Report.pdf`](report/Dipole_HFSS_Report.pdf), and the slides presented in class are in [`presentation/Dipole_HFSS_Presentation.pdf`](presentation/Dipole_HFSS_Presentation.pdf).
 
 ## Design
 
@@ -74,6 +74,7 @@ The λ/4 and λ cases keep the same structure and change only the frequency, so 
 ```
 hfss/Dipole_7G5.aedt           HFSS project: geometry, port, setup, sweeps and all reports
 report/Dipole_HFSS_Report.pdf  Full report with figures and discussion (LaTeX)
+presentation/                  Slides presented in class (PDF)
 figures/                       Figures used in this README and in the report
 ```
 
