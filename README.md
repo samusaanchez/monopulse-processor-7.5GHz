@@ -5,6 +5,8 @@ A microstrip monopulse processor simulator designed and simulated in **AWR Desig
 Lab project for the course *Radio Frequency and Antenna Subsystems*
 MSc in Telecommunication Engineering, Universidad Carlos III de Madrid (2026).
 
+The slides presented in class are in [`presentation/Monopulse_Processor_Presentation.pdf`](presentation/Monopulse_Processor_Presentation.pdf).
+
 ## Highlights
 
 - **LNA:** noise figure 0.90–0.94 dB and gain 11.3–12.4 dB over the whole 7.125–7.875 GHz band.
@@ -187,6 +189,7 @@ At 7.5 GHz the ideal version gives Σ = 9.08 dB and Δ = 8.50 dB at φ = 86°, s
 
 ```
 awr/Monopulse_Processor.emp   AWR Design Environment project: schematics, layouts, graphs and optimizer goals
+presentation/                 Slides presented in class (PDF)
 figures/                      Graphs exported from the project
 layouts/                      Layout views exported from the project
 schematics/                   Schematic view of the LNA core
